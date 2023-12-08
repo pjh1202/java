@@ -27,7 +27,5 @@ public class TypeCastingEx2 {
 		int a,b,c = 1;
 		double d,e,f;
 		
-		
-		
 	}
 }
