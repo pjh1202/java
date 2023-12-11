@@ -15,5 +15,4 @@ public class OperatorEx7 {
 		System.out.println(b);
 		System.out.println(c);
 	}
-
 }
