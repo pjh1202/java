@@ -71,5 +71,6 @@ public class DDD {
 			}
 			break;
 		}
+		scanner.close();
 	}
 }
