@@ -12,6 +12,10 @@ public class ArrayExpand1 {
 				int tmp[] = new int[arr.length + 5];
 				System.arraycopy(arr, 0, tmp, 0, arr.length);
 				arr = tmp;
+				/*for(int j:tmp) {
+					System.out.print(j+" ");
+				}
+				*/
 			}
 			arr[i] = i+1;
 		}
