@@ -1,7 +1,9 @@
 package day06;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class HomeworkEx1 {
@@ -18,13 +20,11 @@ public class HomeworkEx1 {
 	 */
 	Scanner scanner = new Scanner(System.in);
 	int max=9,min=1;
-	 //컴퓨터 숫자
-	 //유저 숫자
 	int count=0;
 	int menu = 0;
 	int score[] = new int[5];
 	for(int i=0; i<score.length; i++) {
-		score[i] = 100;
+		score[i] = -1;
 	}
 	String scoreN[] = new String[5];
 	while(true) {
@@ -35,6 +35,7 @@ public class HomeworkEx1 {
 		menu = scanner.nextInt();
 			switch(menu) {
 			case 1:{
+				String name;
 				count = 0;
 				int scoreCount = 0;
 				int arr[] = new int[3];
@@ -106,11 +107,24 @@ public class HomeworkEx1 {
 				scoreCount++;
 				if(arr2[0]==3) {
 					System.out.println("정답입니다 !");
+					//반복문 활용해서 밀기 : 뒤쪽부터 밀기
 					for(int i=0; i<score.length; i++) {
-						if(count < score[i]) {
+						if(score[i] == -1 || i==4) {
 							score[i] = scoreCount;
 							System.out.print("현재 " + (i+1) + " 등입니다. 이름을 기록하세요 : ");
-							scoreN[i] = scanner.next();
+							name = scanner.next();
+							scoreN[i] = name;
+							break;
+						}
+						else if(scoreCount < score[i]) { //???
+							System.out.print("현재 " + (i+1) + " 등입니다. 이름을 기록하세요 : ");
+							name = scanner.next();
+							for(int j = i; j<score.length-1; j++) {
+								score[j+1] = score[j];
+								scoreN[j+1] = scoreN[j];
+							}
+							score[i] = scoreCount;
+							scoreN[i] = name;
 							break;
 						}
 					}
@@ -120,6 +134,11 @@ public class HomeworkEx1 {
 			break;
 			}
 			case 2: {
+				for(int i=0; i<score.length-1; i++) {
+					if(scoreN[i]==scoreN[i+1]) {
+						scoreN[i+1] = "null";
+					}
+				}
 				System.out.println("--기록--");
 				for(int i=0; i<score.length; i++) {
 					System.out.println((i+1)+"." + scoreN[i] + " : " + score[i]);
