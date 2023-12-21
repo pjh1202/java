@@ -1,4 +1,4 @@
-package day09.board;
+package day10.board;
 
 import java.util.Scanner;
 //파란색 주석은 마우스를 위에 올리면 내가 적어둔 설명이 나옴(/**엔터)
@@ -212,6 +212,7 @@ public class BoardMain {
 		System.out.print("삭제할 게시글 번호 : ");
 		int num=scanner.nextInt();
 		int index = -1;
+		if(num>count) {num=count;}
 		for(int i=0; i<count; i++) {
 			if(num==boardList[i].getNum()) {
 				index = i;
@@ -287,8 +288,8 @@ public class BoardMain {
 		System.out.print("작성자 : ");
 		String writer = scanner.next();
 		
-		Board board = new Board(boardNum++, title, contents, writer, date);
-		boardList[count++] = board;
+		Board board = new Board(title, contents, writer, date);
+		boardList[count] = board;
 		//배열 크기를 안늘려도 되면 종료
 		if(count<boardList.length) {
 			return;

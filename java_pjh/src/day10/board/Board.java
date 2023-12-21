@@ -1,4 +1,4 @@
-package day09.board;
+package day10.board;
 
 /*
  * 게시글 관리를 위한 Board 클래스를 정의
@@ -6,6 +6,7 @@ package day09.board;
  */
 public class Board {
 	//정보 : 게시일, 제목, 내용, 작성자, 조회수, 게시글 번호
+	private static int count = 0;
 	private int num, views;
 	private String title, contents, writer, date;
 	public int getNum() {
@@ -74,8 +75,8 @@ public class Board {
 		contents = contents1;
 	}
 	//생성자 : 게시글 번호, 내용, 작성자, 게시일이 주어진 생성자
-	public Board(int num, String title, String contents, String writer, String date) {
-		this.num = num;
+	public Board(String title, String contents, String writer, String date) {
+		this.num = ++count;
 		this.title = title;
 		this.contents = contents;
 		this.writer = writer;
