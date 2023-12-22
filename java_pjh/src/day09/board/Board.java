@@ -5,7 +5,6 @@ package day09.board;
  *  -멤머변수와 메서드를 추가
  */
 public class Board {
-	//정보 : 게시일, 제목, 내용, 작성자, 조회수, 게시글 번호
 	private int num, views;
 	private String title, contents, writer, date;
 	public int getNum() {
