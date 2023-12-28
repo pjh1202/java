@@ -27,7 +27,7 @@ public class DateEx1 {
 		System.out.println(str);
 		
 		//String => Date
-		Date date2 = format.parse(str);
+		Date date2 = format.parse(str); 
 		System.out.println(date2);
 		
 	}
