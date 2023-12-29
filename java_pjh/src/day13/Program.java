@@ -12,7 +12,7 @@ public interface Program {
 	public abstract void printExit();
 	void run();
 	
-}
+} 
 
 abstract class TestA{ //추상메서드가 있는 클래스는 추상클래스여야 함으로 abstract 가 붙어야 함
 	//클래스에서는 final static 을 생략하면 멤버변수, 붙이면 상수
