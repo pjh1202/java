@@ -2,7 +2,6 @@ package HomeWordEx1;
 
 import java.util.ArrayList;
 import java.util.Objects;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 //단어, 뜻, 품사
@@ -37,5 +36,10 @@ public class Vocabulary {
 	
 	public Vocabulary(String word) {
 		this.word = word;
+	}
+
+	@Override
+	public String toString() {
+		return "단어 : " + word + ",  품사 : " + partOfSpeach + ",  뜻 : " + mean;
 	}
 }
