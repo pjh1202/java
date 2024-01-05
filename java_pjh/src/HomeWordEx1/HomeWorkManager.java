@@ -89,7 +89,7 @@ public class HomeWorkManager {
 	
 	public void printWord(String word) {
 		System.out.println(list.get(showIndexNum(word)));
-		int index = list.indexOf(word);
+		list.get(showIndexNum(word)).setViewNum(list.get(showIndexNum(word)).viewNum+1);
 	}
 	
 	//모든 단어 정보 출력
@@ -98,6 +98,12 @@ public class HomeWorkManager {
 		for(int i=0; i<list.size(); i++) {
 			System.out.print("["+list.get(i).getWord()+"]" + " ");
 		}
+	}
+	
+	public void viewRank() {
+		ArrayList<Vocabulary> sortList = new ArrayList<Vocabulary>(list);
+		sortList.sort(Comparator.comparing(Vocabulary::getViewNum).reversed());
+		System.out.println(sortList.toString());
 	}
 	
 }

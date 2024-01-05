@@ -15,6 +15,6 @@ package HomeWordEx1;
 public class HomeWorkEx1 {
 	public static void main(String[] args) {
 		HomeWorkProgram homeWorkProgram = new HomeWorkProgram();
-		homeWorkProgram.run();	
+		homeWorkProgram.run();
 	}
 }

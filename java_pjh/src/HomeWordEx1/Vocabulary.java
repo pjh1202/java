@@ -10,6 +10,7 @@ public class Vocabulary {
 	
 	String word, partOfSpeach;
 	ArrayList<String> mean = new ArrayList<String>();
+	int viewNum;
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -28,10 +29,11 @@ public class Vocabulary {
 		return Objects.hash(word);
 	}
 
-	public Vocabulary(String word, String partOfSpeach, ArrayList<String> mean) {
+	public Vocabulary(String word, String partOfSpeach, ArrayList<String> mean, int viewNum) {
 		this.word = word;
 		this.partOfSpeach = partOfSpeach;
 		this.mean = mean;
+		this.viewNum = viewNum;
 	}
 	
 	public Vocabulary(String word) {
@@ -40,6 +42,6 @@ public class Vocabulary {
 
 	@Override
 	public String toString() {
-		return "단어 : " + word + ",  품사 : " + partOfSpeach + ",  뜻 : " + mean;
+		return "단어 : " + word + ",  품사 : " + partOfSpeach + ",  뜻 : " + mean+"  조회수 : " + viewNum+"\n";
 	}
 }

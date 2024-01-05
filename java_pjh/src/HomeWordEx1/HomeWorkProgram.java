@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Program.Program;
+import day05.ArrayCopyEx1;
 /* 기한은 1월 5일까지 github에 업로드 후 단톡방에 공유
  * 영어 단어장을 관리하는 프로그램 작성
  *  - 한 단어에 뜻이 여러개 있을 수 있음
@@ -59,13 +60,13 @@ public class HomeWorkProgram implements Program{
 
 	@Override
 	public void run() {
-		int menu=0;
+		int menu = 0;
 		do {
 			printMenu();
-			try{
+			try{	
 				menu = scanner.nextInt();
 				runMenu(menu);
-			}catch(InputMismatchException e) {System.out.println("잘못된 메뉴선택입니다.");} 
+			}catch(InputMismatchException e) {System.out.println("잘못된 메뉴선택입니다."); scanner.nextLine();} 
 		}while(menu!=4);
 	}
 
@@ -76,7 +77,7 @@ public class HomeWorkProgram implements Program{
 		case 2: show(); break;
 		case 3: wordGame(); break;
 		case 4: System.out.println("프로그램을 종료합니다."); break;
-		default: new InputMismatchException(); break;
+		default: new InputMismatchException();
 		}
 	}
 
@@ -87,7 +88,7 @@ public class HomeWorkProgram implements Program{
 		case 1: insertWord(); break; //단어 추가
 		case 2: updateWord(); break; //단어 수정
 		case 3: deleteWord(); break; //단어 삭제
-		default: new InputMismatchException(); break;
+		default: new InputMismatchException();
 		}
 	}
 	
@@ -105,7 +106,7 @@ public class HomeWorkProgram implements Program{
 		System.out.print("뜻 입력 : ");
 		ArrayList<String> mean = new ArrayList<String>();
 		mean.add(scanner.nextLine());
-		Vocabulary v = new Vocabulary(word, partOfSpeach, mean);
+		Vocabulary v = new Vocabulary(word, partOfSpeach, mean,0);
 		hwm.insertWord(v);
 		System.out.println("단어가 추가됐습니다.");
 	}
@@ -118,7 +119,7 @@ public class HomeWorkProgram implements Program{
 		case 1: insertMean(); break; //뜻 추가
 		case 2: deleteMean(); break; //뜻 삭제
 		case 3: System.out.println("뒤로가기"); break; //
-		default: new InputMismatchException(); break;
+		default: new InputMismatchException();
 		}
 		
 	}
@@ -151,7 +152,7 @@ public class HomeWorkProgram implements Program{
 			return;
 		}
 		System.out.print("삭제할 뜻 입력 : ");
-		String mean = scanner.next();
+		String mean = scanner.nextLine();
 		if(hwm.checkMean(word, mean)) {
 			hwm.deleteMean(word, mean);
 			System.out.println("뜻이 삭제됐습니다.");
@@ -181,13 +182,13 @@ public class HomeWorkProgram implements Program{
 		switch(menu) {
 		case 1: viewWord(); break;
 		case 2: showWord(); break;
-		default: new InputMismatchException(); break;
+		default: new InputMismatchException();
 		}
 	}
 	
 
 	private void viewWord() {
-		System.out.println("아직 구현 안됨");
+		hwm.viewRank();
 		return;
 		
 	}
