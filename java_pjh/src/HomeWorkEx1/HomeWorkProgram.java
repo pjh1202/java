@@ -1,4 +1,4 @@
-package HomeWordEx1;
+package HomeWorkEx1;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
