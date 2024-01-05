@@ -1,4 +1,4 @@
-package HomeWordEx1;
+package HomeWorkEx1;
 /* 기한은 1월 5일까지 github에 업로드 후 단톡방에 공유
  * 영어 단어장을 관리하는 프로그램 작성
  *  - 한 단어에 뜻이 여러개 있을 수 있음
